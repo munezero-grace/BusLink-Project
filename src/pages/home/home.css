@@ -19,7 +19,8 @@ body {
     height: 100%;
  } 
 .container1{
-    display: grid; 
+    display: grid;
+    
 }
 .container1 img {
     object-fit: cover; 
@@ -33,18 +34,19 @@ body {
     position: absolute;
     background-color: rgba(14, 34, 51, 0.373);
     width: 100%;
-    height: 85.1vh;
+    height: 95.1vh;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
 }
 .whole2 {
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     width: 380px;
     position: absolute;
    margin-left: 32%;
    margin-top: 9%;
+   
 }
 .whole2 h1{
 color: white;
@@ -72,6 +74,7 @@ height: 30%;
  margin-left: 25%;
  position: absolute;
  margin-top: -5%;
+
 }
 .cont2{
     margin-left: 5%;
@@ -137,7 +140,18 @@ select option{
     display: flex;
     margin-top: 16%;
     margin-left: 10%;
+    animation: slide-in 40s ease-in-out;
 }
+/* @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  } */
 .one{
     background-color: #009AC7;
     color: white;
@@ -801,7 +815,98 @@ margin-top: 2rem;
     font-size: 12px;
 }
 }
-@media screen and (min-width:481px) and (max-width:540px){
+@media screen and (min-width:481px) and (max-width:500px){
+    body{
+        height:248vh;
+      } 
+      .container1 img{
+height: 90%;
+width: 33.6rem;
+      } 
+      .overlay{
+    height: 72%;    
+    width: 33.6rem;      
+}
+      .whole2{
+        margin-top: 12%;
+        margin-left: 20%;
+      }  
+.whole2 h1{
+    font-size: 2.6rem;
+    width: 20rem;
+}
+.whole2 button{
+    margin-top: 6%;
+    margin-left: 28%;
+}
+.container2{
+    width: 70%;
+    height:35%;
+    margin-top: -17%;
+    margin-left: 15%;
+}
+.input2 label{
+    margin-left: 4%;
+}
+input{
+    width: 10rem;
+}
+select{
+    margin-left: 10%;  
+}
+.input button{
+    margin-top: 4rem;
+    margin-left: -11rem;
+    width: 10rem;
+    height: 1.5rem;
+}
+.whole3{
+    margin-top: 25%;
+}
+.one {
+width: 36%;
+margin-left: -4%;
+}
+.schedule .p{
+    margin-left: -9%;
+    width: 32rem;
+}
+.rect h4{
+margin-left: -60%;    
+}
+.rect p{
+    margin-left: -70%;    
+    }
+    .rect button{
+        margin-left: -50%;    
+        }    
+.map1{
+    display: none;
+}
+.parg1 p{
+    margin-left: -6%;
+    width: 30rem;
+}
+.parg1 h2{
+    margin-left: -1%;
+}
+.parg2 p{
+    margin-left: -6%;
+    width: 30rem;
+}
+.parg2 h2{
+    margin-left: -1%;
+}
+.parg3 p{
+    margin-left: -6%;
+    width: 30rem;
+}
+.parg3 h2{
+    margin-left: -1%;
+}
+}
+
+@media screen and (min-width:501px) and (max-width:540px){
     body{
         height:248vh;
       } 
@@ -890,18 +995,47 @@ margin-left: -60%;
 }
 }
 
-/* @media screen and (min-width:541px) and (max-width:782px){
+@media screen and (min-width:541px) and (max-width:782px){
 .container2{
     height: 10rem;
-    width: 60%;
+    width: 70%;
     margin-left: 20%;
 }
-.input label{
-    margin-left: 30%;
+.whole2{
+    margin-left: 15%;
 }
-} */
+.overlay{
+    height: 33.4rem;
+}
+.input1 label{
+    margin-left: 6%;
+    font-size: 14px;
+}
+.input2 label{
+    font-size: 14px; 
+    margin-left: 4%; 
+}
+input{
+    width: 7rem;
+}
+select{
+    width:5rem;
+    margin-left: 10%;
+    margin-top: 23%;
+}
+.input button{
+    width: 170%;
+    margin-left: 36%;
+}
+.whole3{
+    margin-top: 26%;
+}
+.one{
+    width: 30%;
+}
+}
 
-@media screen and (min-width:783px) and (max-width:820px){
+@media screen and (min-width:783px) and (max-width:800px){
   body{
     height:248vh;
   } 
@@ -952,6 +1086,57 @@ font-size: 46px;
     width: 48.9rem;
 }
 }
+@media screen and (min-width:801px) and (max-width:820px){
+    body{
+      height:248vh;
+    } 
+    .whole2{
+      margin-top: 15%;
+      margin-left: 26%;
+    } 
+    .container2{
+      margin-left: 17%;
+      width: 65%;
+      height: 36%;
+    }
+    select{
+      margin-left: 26%;
+    }
+    .input2 label{
+      margin-left: 7%;
+    }
+    .input button{
+      margin-left: 50%;
+      margin-top: 6%;
+      width: 7rem;
+      height: 86%;
+    }
+    .whole3{
+      margin-top: 26%;
+  
+    }
+   .one{
+      width: 10rem;
+   } 
+  .parg1 p{
+      width:43rem;
+      margin-left: -33px;
+  }
+  .parg2 p{
+      width:43rem;
+      margin-left: -33px;
+  }
+  .parg3 p{
+      width:43rem;
+      margin-left: -33px;
+  }
+  .drag h1{
+  font-size: 46px;
+  }
+  .drag{
+      width: 48.9rem;
+  }
+  }
 
 @media screen and (min-width:821px) and (max-width:912px){
     body{
@@ -961,7 +1146,7 @@ font-size: 46px;
        height: 80%;
     }
     .overlay{
-        height: 34.4%;   
+        height: 99.4%;   
     }
 .whole2{
 margin-top: 11%;
@@ -971,7 +1156,7 @@ margin-left: 30%;
     margin-top: -23%;
     margin-left: 18%;
     width: 65%;
-    height:16%;
+    height:36%;
 }
 .cont2{
     margin-top: 4%;

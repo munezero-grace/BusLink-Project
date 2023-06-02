@@ -1,6 +1,6 @@
 import React from "react";
 import './Home.css'
-
+import NavBar  from "../../pages/navigation/NavigationBar.jsx";
 import { FaSearch } from 'react-icons/fa';
 import {AiOutlineSwapRight} from 'react-icons/ai'
 import {AiOutlineRight} from 'react-icons/ai'
@@ -14,11 +14,11 @@ const Home =()=>{
     const carousel =useRef();
   
     useEffect(()=>{
-  setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+  setWidth(carousel.current - carousel.current)
     },[])
     return(
-        
         <div className="whole1">
+            <NavBar/>
         <div className="container1">
 <img src={Image}/>
 <div className="overlay"></div>
