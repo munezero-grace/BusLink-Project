@@ -1,10 +1,23 @@
 import React from "react";
-import './home.css'
- import {GoSearch} from 'react-icons'
+import './Home.css'
+
+import { FaSearch } from 'react-icons/fa';
+import {AiOutlineSwapRight} from 'react-icons/ai'
+import {AiOutlineRight} from 'react-icons/ai'
+import {motion} from 'framer-motion'
+import { useRef,useEffect,useState } from 'react'
+import images from './images'
 import Image from '../image/ElecMobility.jpg'
 
 const Home =()=>{
+    const[width,setWidth] = useState(0);
+    const carousel =useRef();
+  
+    useEffect(()=>{
+  setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+    },[])
     return(
+        
         <div className="whole1">
         <div className="container1">
 <img src={Image}/>
@@ -15,21 +28,27 @@ const Home =()=>{
 </div>
         </div>
         <div className="container2">
-       <h2>Find schedule</h2> 
+            <div className="cont2">
+            <h2>Find schedule</h2> 
        <p>Quickly look up scheduled times for a specific bus stop, bus route or station</p>
        <form>
         <div className="input">
         <div className="input1">
-        <label>Search by transit mode or route name</label>
+        <label>Search route name</label>
         <input placeholder="e.g.chez lando" type="text"/>
         </div>
         <div className="input2">
         <label>Filter</label>
-        <input placeholder="Show all" type="text"/>
+        <select id='myDropdown'>
+            <option value="option1">Show all</option>
+            <option value="option2">Stops</option>
+            <option value="option3">Routes/Lines</option>
+            <option value="option4">Bus Station</option>
+        </select>
         </div>
-<button><span><GoSearch/></span>Find Schedule</button>
+<button><span><FaSearch/></span>Find Schedule</button>
         </div>
-        </form>    
+        </form>  </div>  
         </div>
 <div className="whole3">
     <div className="one">
@@ -44,13 +63,32 @@ const Home =()=>{
     <h1>Bus Schedule</h1>
     <p className="p">Our three automated rapid transit Bus lines take you all around Kigali:</p>
     <div className="p1">
-        <p className="p2"> . Gasabo district   34 bus routes </p>
-        <p className="p2"> . Kicukiro district   2 bus routes</p>
-        <p className="p2"> . Nyarugenge district   15 bus routes</p>
+        <p className="p2">  Gasabo district  <AiOutlineSwapRight/> 34 bus routes </p>
+        <p className="p2">  Kicukiro district  <AiOutlineSwapRight/> 2 bus routes</p>
+        <p className="p2">  Nyarugenge district  <AiOutlineSwapRight/> 15 bus routes</p>
     </div>
 <div className="map">
     <div className="line1"></div>
-    <div className="map1"></div>
+    <div className="rectangle">
+        <div>
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.292484035286!2d30.05784773616678!3d-1.9378347333206631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6a40203f041%3A0x5f8434259d8c4393!2sKacyiru%2C%20Kigali!5e0!3m2!1sfr!2srw!4v1685865664641!5m2!1sfr!2srw"
+        width="80%"
+        height="240"
+        style={{ border: '0',borderRadius:'7px 0 0 7px'}}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Embedded Map"
+      className="map1"
+      ></iframe>
+        </div>
+        <div className="rect">
+            <h4>Discover all destinations</h4>
+            <p>Choose from over 100 routes destination in Kigali</p>
+            <button>Expore the map <AiOutlineRight style={{paddingTop:'2%'}}/></button>
+        </div>
+    </div>
     <div className="line2"></div>
 </div>
 </div>
@@ -69,7 +107,25 @@ const Home =()=>{
     </div>
 </div>
 
-<div className="">
+<div className="drag">
+<p>Explore roads with us</p>
+<h1>Our Bus Stops</h1>
+<div id='container'>
+            <motion.div ref={carousel} className='carousel' whileTap={{cursor: 'grabbing'}}  >
+              <motion.div drag="x" dragConstraints={{right:0,left: -width}} className='inner-carousel'>
+{images.map(image =>{
+    return(
+      <motion.div className='item' key={image}>
+        
+        <img src={image} /> 
+      </motion.div>  
+    )
+})
+}
+              </motion.div>
+            </motion.div>
+
+        </div>
 
 </div>
         </div>

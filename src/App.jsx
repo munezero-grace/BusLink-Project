@@ -8,16 +8,13 @@ import Admin from './pages/Admindashboard/admindash'
 
 
 const App=()=>{
-  const [count, setCount] = useState(0)
- 
-//   <Router>
-// <Routes></Routes>
-// </Router>
- 
+
   return (
    <>
-     <Home/> 
- 
+     {/* <Home/>  */}
+     <Router>
+<Routes></Routes>
+</Router>
    </>
   )
 }
